@@ -1,11 +1,14 @@
 add_executable(
-  hello_test
-  hello_test.cpp
+  result_test
+  result_test.cpp
 )
 target_link_libraries(
-  hello_test
+  result_test
   GTest::gtest_main
+  lib
 )
 
+target_include_directories(result_test PRIVATE ../src/)
+
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(result_test)
